@@ -5,6 +5,8 @@ services:
     build: .
     container_name: fastapi_app
     restart: always
+    ports:
+      - "8000:8000"  # This is the fix: publish container port to host
     expose:
       - "8000"
 
