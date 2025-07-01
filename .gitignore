@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# uv
+.uv/
+uv.cache/
+.venv/
+.uvvenv/
+
+# Logs & env
+*.log
+.env
+
+# Docker
+*.tar
+docker-compose.override.yml
+
+# IDE & system
+.vscode/
+.idea/
+.DS_Store
+*.swp
