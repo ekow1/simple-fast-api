@@ -13,8 +13,9 @@ services:
   nginx:
     image: nginx:latest
     container_name: nginx
+    restart: always
     volumes:
-      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
       - ./nginx/certbot/conf:/etc/letsencrypt
       - ./nginx/certbot/www:/var/www/certbot
     ports:
@@ -29,3 +30,5 @@ services:
     volumes:
       - ./nginx/certbot/conf:/etc/letsencrypt
       - ./nginx/certbot/www:/var/www/certbot
+    entrypoint: "/bin/sh -c"
+    command: "trap exit TERM; sleep infinity"
